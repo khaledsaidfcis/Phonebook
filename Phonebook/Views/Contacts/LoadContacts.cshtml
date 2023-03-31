@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Phonebook.Models.Contact>
+
+@{
+    ViewData["Title"] = "LoadContacts";
+}
+
+<h1>Load Contacts</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required />
+    <button type="submit">Upload Contacts</button>
+</form>
+@if(Model !=null){
+    <div>
+        <partial name="_ContactList" model="Model" />
+    </div>
+}
